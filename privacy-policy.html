@@ -35,7 +35,8 @@
         }
 
         body:not(.lang-en) .lang-en,
-        body:not(.lang-bn) .lang-bn {
+        body:not(.lang-bn) .lang-bn,
+        body:not(.lang-bl) .lang-bl {
             display: none !important;
         }
 
@@ -74,7 +75,7 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
         .nav-link {
             color: rgba(255, 255, 255, 0.75);
@@ -128,31 +129,32 @@
             border-radius:100px; padding:6px 16px;
             font-size:clamp(10px,2.5vw,12px); font-weight:500;
             letter-spacing:.08em; text-transform:uppercase;
-            color:rgba(255,255,255,.8); margin-bottom:18px; position:relative;
+            color:rgba(255,255,255,.85); margin-bottom:18px; position:relative;
         }
         .hero-badge::before {
             content:''; width:7px; height:7px; border-radius:50%;
             background:#10b981; box-shadow:0 0 8px #10b981; flex-shrink:0;
         }
         
-        /* Language Toggle Button Pill */
+        /* 3-Language Toggle Button Pill */
         .lang-switcher-wrap {
             display: inline-flex;
-            background: rgba(2, 117, 68, 0.3);
+            background: rgba(2, 117, 68, 0.35);
             border: 1px solid rgba(16, 185, 129, 0.35);
             border-radius: 100px;
             padding: 3px;
             margin: 18px 0;
             position: relative;
+            gap: 3px;
         }
         .lang-btn {
             border: none;
             background: transparent;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.75);
             font-family: inherit;
             font-size: 13px;
             font-weight: 600;
-            padding: 6px 18px;
+            padding: 6px 16px;
             border-radius: 100px;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -175,14 +177,14 @@
             background:linear-gradient(135deg,#3ddc84,#10b981);
             -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
         }
-        .hero-sub { color:rgba(255,255,255,.65); font-size:clamp(13px,3vw,15.5px); position:relative; max-width:650px; margin:0 auto; }
+        .hero-sub { color:rgba(255,255,255,.7); font-size:clamp(13px,3vw,15.5px); position:relative; max-width:650px; margin:0 auto; }
         .hero-meta {
             display:flex; justify-content:center; flex-wrap:wrap;
             gap:clamp(10px,3vw,22px); position:relative; margin-top:20px;
         }
         .hero-meta-item {
             display:flex; align-items:center; gap:8px;
-            font-size:clamp(11px,2.5vw,13px); color:rgba(255,255,255,.6);
+            font-size:clamp(11px,2.5vw,13px); color:rgba(255,255,255,.65);
         }
         .hero-meta-item i { color: #10b981; }
 
@@ -384,7 +386,7 @@
         }
     </style>
 </head>
-<body class="lang-bn">
+<body class="lang-en">
 
 <!-- Top Navigation -->
 <nav class="site-nav">
@@ -396,10 +398,12 @@
         <a href="privacy-policy.html" class="nav-link active">
             <span class="lang-en">Privacy Policy</span>
             <span class="lang-bn">গোপনীয়তা নীতি</span>
+            <span class="lang-bl">Privacy Policy</span>
         </a>
         <a href="terms-of-use.html" class="nav-link">
             <span class="lang-en">Terms of Use</span>
             <span class="lang-bn">ব্যবহারের শর্তাবলি</span>
+            <span class="lang-bl">Terms of Use</span>
         </a>
     </div>
 </nav>
@@ -413,18 +417,22 @@
     <div>
         <div class="hero-badge lang-en">Banglish Keyboard &middot; 100% Private &amp; Secure</div>
         <div class="hero-badge lang-bn">বাংলিশ কিবোর্ড &middot; ১০০% প্রাইভেসি সুরক্ষিত</div>
+        <div class="hero-badge lang-bl">Banglish Keyboard &middot; 100% Privacy Shurokkhito</div>
     </div>
 
     <h1 class="lang-en">Privacy <span>Policy</span></h1>
     <h1 class="lang-bn">গোপনীয়তা <span>নীতিমালা</span></h1>
+    <h1 class="lang-bl">Privacy <span>Policy</span></h1>
 
     <p class="hero-sub lang-en">Banglish Keyboard by JS Organization — Zero keylogging, on-device local intelligence, and complete typing privacy.</p>
     <p class="hero-sub lang-bn">JS Organization-এর বাংলিশ কিবোর্ড — কোনো কি-লগিং নেই, সম্পূর্ণ ডিভাইসে লোকাল প্রসেসিং এবং শতভাগ নিরাপদ টাইপিং।</p>
+    <p class="hero-sub lang-bl">JS Organization er Banglish Keyboard — Kono keylogging nai, device e shob local processing, full safe typing!</p>
 
-    <!-- Language Switcher (Bangla & English Only) -->
+    <!-- 3-Way Language Switcher (Default: English) -->
     <div class="lang-switcher-wrap">
-        <button id="btnBn" class="lang-btn active" onclick="setLanguage('bn')">বাংলা</button>
-        <button id="btnEn" class="lang-btn" onclick="setLanguage('en')">English</button>
+        <button id="btnEn" class="lang-btn active" onclick="setLanguage('en')">English</button>
+        <button id="btnBn" class="lang-btn" onclick="setLanguage('bn')">বাংলা</button>
+        <button id="btnBl" class="lang-btn" onclick="setLanguage('bl')">Banglish</button>
     </div>
 
     <div class="hero-meta">
@@ -432,16 +440,19 @@
             <i class="fa-regular fa-calendar-check"></i>
             <span class="lang-en">Effective: October 2026</span>
             <span class="lang-bn">কার্যকরী তারিখ: অক্টোবর ২০২৬</span>
+            <span class="lang-bl">Effective: October 2026</span>
         </div>
         <div class="hero-meta-item">
             <i class="fa-solid fa-shield-halved"></i>
             <span class="lang-en">Zero Keylogging Guarantee</span>
             <span class="lang-bn">সম্পূর্ণ কি-লগিং মুক্ত নিশ্চয়তা</span>
+            <span class="lang-bl">Zero Keylogging Guarantee</span>
         </div>
         <div class="hero-meta-item">
             <i class="fa-solid fa-microchip"></i>
             <span class="lang-en">100% On-Device Processing</span>
             <span class="lang-bn">১০০% ডিভাইসে লোকাল প্রসেসিং</span>
+            <span class="lang-bl">100% On-Device Local Processing</span>
         </div>
     </div>
 </div>
@@ -452,40 +463,41 @@
     <div class="toc-card">
         <h2 class="lang-en">Table of Contents</h2>
         <h2 class="lang-bn">সূচিপত্র</h2>
+        <h2 class="lang-bl">Table of Contents (Suchipotro)</h2>
 
         <div class="toc-grid">
             <a href="#p1" class="toc-link"><span class="toc-num">01</span>
-                <span class="lang-en">Introduction</span><span class="lang-bn">ভূমিকা ও পরিচিতি</span>
+                <span class="lang-en">Introduction</span><span class="lang-bn">ভূমিকা ও পরিচিতি</span><span class="lang-bl">Introduction (Bhumika)</span>
             </a>
             <a href="#p2" class="toc-link"><span class="toc-num">02</span>
-                <span class="lang-en">Zero Keylogging</span><span class="lang-bn">জিরো কি-লগিং নীতি</span>
+                <span class="lang-en">Zero Keylogging</span><span class="lang-bn">জিরো কি-লগিং নীতি</span><span class="lang-bl">Zero Keylogging Niti</span>
             </a>
             <a href="#p3" class="toc-link"><span class="toc-num">03</span>
-                <span class="lang-en">On-Device Local Data</span><span class="lang-bn">লোকাল ডেটা সংরক্ষণ</span>
+                <span class="lang-en">On-Device Local Data</span><span class="lang-bn">লোকাল ডেটা সংরক্ষণ</span><span class="lang-bl">Local Data Shongrokkhon</span>
             </a>
             <a href="#p4" class="toc-link"><span class="toc-num">04</span>
-                <span class="lang-en">Voice Typing & Mic</span><span class="lang-bn">ভয়েস টাইপিং ও মাইক্রোফোন</span>
+                <span class="lang-en">Voice Typing &amp; Mic</span><span class="lang-bn">ভয়েস টাইপিং ও মাইক্রোফোন</span><span class="lang-bl">Voice Typing o Mic</span>
             </a>
             <a href="#p5" class="toc-link"><span class="toc-num">05</span>
-                <span class="lang-en">In-Keyboard Translation</span><span class="lang-bn">অনুবাদ ফিচার</span>
+                <span class="lang-en">In-Keyboard Translation</span><span class="lang-bn">অনুবাদ ফিচার</span><span class="lang-bl">In-Keyboard Translation</span>
             </a>
             <a href="#p6" class="toc-link"><span class="toc-num">06</span>
-                <span class="lang-en">Clipboard Protection</span><span class="lang-bn">ক্লিপবোর্ড সুরক্ষা</span>
+                <span class="lang-en">Clipboard Protection</span><span class="lang-bn">ক্লিপবোর্ড সুরক্ষা</span><span class="lang-bl">Clipboard Shurokkha</span>
             </a>
             <a href="#p7" class="toc-link"><span class="toc-num">07</span>
-                <span class="lang-en">Permissions Required</span><span class="lang-bn">প্রয়োজনীয় পারমিশন</span>
+                <span class="lang-en">Permissions Required</span><span class="lang-bn">প্রয়োজনীয় পারমিশন</span><span class="lang-bl">Proyojonio Permissions</span>
             </a>
             <a href="#p8" class="toc-link"><span class="toc-num">08</span>
-                <span class="lang-en">Data Deletion & Control</span><span class="lang-bn">ডেটা নিয়ন্ত্রণ ও মুছে ফেলা</span>
+                <span class="lang-en">Data Deletion &amp; Control</span><span class="lang-bn">ডেটা নিয়ন্ত্রণ ও মুছে ফেলা</span><span class="lang-bl">Data Delete &amp; Control</span>
             </a>
             <a href="#p9" class="toc-link"><span class="toc-num">09</span>
-                <span class="lang-en">Children's Privacy</span><span class="lang-bn">শিশুদের গোপনীয়তা</span>
+                <span class="lang-en">Children's Privacy</span><span class="lang-bn">শিশুদের গোপনীয়তা</span><span class="lang-bl">Bachader Privacy</span>
             </a>
             <a href="#p10" class="toc-link"><span class="toc-num">10</span>
-                <span class="lang-en">Contact & Support</span><span class="lang-bn">যোগাযোগ ও সাপোর্ট</span>
+                <span class="lang-en">Contact &amp; Support</span><span class="lang-bn">যোগাযোগ ও সাপোর্ট</span><span class="lang-bl">Jogajog o Support</span>
             </a>
             <a href="#p11" class="toc-link"><span class="toc-num">11</span>
-                <span class="lang-en">Legal Compliance</span><span class="lang-bn">আইনি সম্মতি</span>
+                <span class="lang-en">Legal Compliance</span><span class="lang-bn">আইনি সম্মতি</span><span class="lang-bl">Legal Compliance</span>
             </a>
         </div>
     </div>
@@ -497,16 +509,20 @@
             <div>
                 <div class="section-title lang-en">Introduction</div>
                 <div class="section-title lang-bn">ভূমিকা ও পরিচিতি</div>
+                <div class="section-title lang-bl">Introduction (Bhumika)</div>
                 <div class="section-subtitle lang-en">About Banglish Keyboard and our privacy commitment</div>
                 <div class="section-subtitle lang-bn">বাংলিশ কিবোর্ড এবং আমাদের গোপনীয়তা প্রতিশ্রুতি</div>
+                <div class="section-subtitle lang-bl">Banglish Keyboard ebong amader privacy commitment</div>
             </div>
         </div>
         <div class="section-body">
             <p class="lang-en"><strong>Banglish Keyboard</strong> (Package ID: <code>com.banglish.keyboard</code>) is developed by <strong>Md Mobassher Ahmed Sowrov</strong> and published by <strong>JS Organization</strong>. The application is an Android Input Method Editor (IME) built for fast, intuitive Bengali and English typing.</p>
             <p class="lang-bn"><strong>Banglish Keyboard</strong> (প্যাকেজ আইডি: <code>com.banglish.keyboard</code>) অ্যাপটি <strong>Md Mobassher Ahmed Sowrov</strong> দ্বারা তৈরি এবং <strong>JS Organization</strong> কর্তৃক পরিচালিত। এটি একটি আধুনিক অ্যান্ড্রয়েড ইনপুট মেথড (IME) কিবোর্ড অ্যাপ, যা ব্যবহারকারীদের স্বাচ্ছন্দ্যে বাংলা ও ইংরেজিতে টাইপ করার সুবিধা দেয়।</p>
+            <p class="lang-bl"><strong>Banglish Keyboard</strong> (Package ID: <code>com.banglish.keyboard</code>) develop korechen <strong>Md Mobassher Ahmed Sowrov</strong> ebong manage kore <strong>JS Organization</strong>. Eta ekta modern Android keyboard jeta diye fast Bengali &amp; English type kora jay.</p>
 
             <p class="lang-en">We believe user privacy is an absolute priority. We have engineered Banglish Keyboard under an <strong>Offline-First, Zero-Telemetry Architecture</strong>. We do not track, collect, record, or transmit your personal keystrokes or sensitive information to any cloud servers.</p>
             <p class="lang-bn">আমরা ব্যবহারকারীর তথ্যের গোপনীয়তাকে সর্বোচ্চ অগ্রাধিকার দিই। বাংলিশ কিবোর্ড সম্পূর্ণ <strong>অফলাইন-ফার্স্ট এবং জিরো-টেলিমেট্রি নীতিতে</strong> তৈরি। আপনার টাইপ করা কোনো মেসেজ বা কি-স্ট্রোক আমরা কোনো দূরবর্তী সার্ভারে জমা বা ট্র্যাক করি না।</p>
+            <p class="lang-bl">Amra user privacy ke shobcheye beshi priority dei. Banglish Keyboard fully <strong>Offline-First ebong Zero-Telemetry</strong> system e toiri. Apnar type kora kono keystroke, message ba password amader ba onno kono server e kokhono jay na.</p>
         </div>
     </div>
 
@@ -517,6 +533,7 @@
             <div>
                 <div class="section-title lang-en">Zero Keylogging Guarantee</div>
                 <div class="section-title lang-bn">জিরো কি-লগিং গ্যারান্টি</div>
+                <div class="section-title lang-bl">Zero Keylogging Guarantee</div>
             </div>
         </div>
         <div class="section-body">
@@ -525,11 +542,13 @@
                 <div>
                     <div class="lang-en"><strong>Strictly Protected:</strong> Banglish Keyboard does NOT log, store, or transmit your passwords, payment details, chat messages, or keystrokes to external servers. All typing stays strictly within the app you are typing in.</div>
                     <div class="lang-bn"><strong>সম্পূর্ণ সুরক্ষিত:</strong> বাংলিশ কিবোর্ড আপনার পাসওয়ার্ড, পেমেন্ট তথ্য, ব্যক্তিগত মেসেজ বা কোনো কি-স্ট্রোক কখনোই কোনো সার্ভারে পাঠায় না। আপনার লেখা কেবল আপনার নির্দিষ্ট অ্যাপের মধ্যেই থাকে।</div>
+                    <div class="lang-bl"><strong>Full Shurokkhito:</strong> Banglish Keyboard konodino apnar password, card details, personal chat ba keystrokes kono server e pathay na. Apni je app e type korchen, lekha shudhu shei app ei thake.</div>
                 </div>
             </div>
 
             <p class="lang-en">When enabling any custom keyboard, Android displays a default system warning stating that input methods can theoretically capture input text. This is a standard operating system warning for all third-party keyboards. Banglish Keyboard has no telemetry servers and collects zero keystroke logs.</p>
             <p class="lang-bn">অ্যান্ড্রয়েড ফোনে যেকোনো কিবোর্ড সক্রিয় করার সময় সিস্টেম থেকে একটি সাধারণ সতর্কবার্তা আসে যে কিবোর্ড আপনার লেখা দেখতে পারে। এটি গুগলের একটি স্বয়ংক্রিয় সতর্কবার্তা। বাংলিশ কিবোর্ডে কোনো কি-লগিং ব্যবস্থা নেই।</p>
+            <p class="lang-bl">Android phone e je kono keyboard enable korar shomoy system theke ekta warning show kore je keyboard text capture korte pare. Eta shob keyboard er jonno Android er default warning. Banglish Keyboard kono keylogger use kore na.</p>
 
             <div class="pill-grid">
                 <span class="pill blocked">No Password Logging</span>
@@ -547,11 +566,13 @@
             <div>
                 <div class="section-title lang-en">On-Device Local Data</div>
                 <div class="section-title lang-bn">ডিভাইসে লোকাল ডেটা সংরক্ষণ</div>
+                <div class="section-title lang-bl">On-Device Local Data</div>
             </div>
         </div>
         <div class="section-body">
             <p class="lang-en">To provide quick word suggestions and autocorrect, Banglish Keyboard stores minimal operational data <strong>locally on your device</strong>:</p>
             <p class="lang-bn">সঠিক শব্দ সাজেশন ও দ্রুত টাইপিংয়ের সুবিধার জন্য কিবোর্ড কিছু প্রাথমিক ডেটা <strong>শুধুমাত্র আপনার ফোনের লোকাল মেমোরিতে</strong> সংরক্ষণ করে:</p>
+            <p class="lang-bl">Fast word prediction ebong autocorrect er jonno keyboard shudhu apnar phone er <strong>local memory</strong> te kichu data rakhe:</p>
 
             <ul class="policy-list lang-en">
                 <li><strong>Word Suggestions &amp; Autocorrect:</strong> Frequently typed words are saved locally on your device to predict your common phrases and speed up typing.</li>
@@ -565,6 +586,12 @@
                 <li><strong>কিবোর্ড সেটিংস:</strong> আপনার পছন্দের থিম, ভাষা মোড ও ভাইব্রেশন পছন্দসমূহ।</li>
                 <li><strong>পাসওয়ার্ড ফিল্ড সুরক্ষা:</strong> যেকোনো পাসওয়ার্ড ফিল্ডে টাইপ করার সময় শব্দ শেখা স্বয়ংক্রিয়ভাবে বন্ধ থাকে।</li>
             </ul>
+            <ul class="policy-list lang-bl">
+                <li><strong>Word Suggestions &amp; Dictionary:</strong> Fast typing er jonno regular use kora shobdo gulo shudhu apnar phone ei save thake.</li>
+                <li><strong>User Dictionary:</strong> Type korar shomoy apni je notun shobdo gulo add koren.</li>
+                <li><strong>Keyboard Settings:</strong> Apnar pochonder theme, language mode ebong vibration settings.</li>
+                <li><strong>Password Field Protection:</strong> Password field e type korar shomoy word learning automatically off thake.</li>
+            </ul>
         </div>
     </div>
 
@@ -575,17 +602,20 @@
             <div>
                 <div class="section-title lang-en">Voice Typing &amp; Microphone Usage</div>
                 <div class="section-title lang-bn">ভয়েস টাইপিং ও মাইক্রোফোন ব্যবহার</div>
+                <div class="section-title lang-bl">Voice Typing o Microphone</div>
             </div>
         </div>
         <div class="section-body">
             <p class="lang-en">The <code>RECORD_AUDIO</code> permission is used solely when you explicitly tap the microphone button to convert spoken speech to text using Android's platform speech service.</p>
             <p class="lang-bn">কিবোর্ডের মাইক্রোফোন আইকনে ট্যাপ করে কথা বলে টাইপ করার সুবিধার জন্য <code>RECORD_AUDIO</code> পারমিশন প্রয়োজন হয়।</p>
+            <p class="lang-bl">Keyboard er mic button e tap kore mukhe bole type korar jonno <code>RECORD_AUDIO</code> permission use hoy.</p>
 
             <div class="callout safe">
                 <i class="fa-solid fa-microphone-slash"></i>
                 <div>
                     <div class="lang-en"><strong>No Audio Recording Storage:</strong> We do NOT save, store, or archive your voice recordings. The audio stream is converted into text in real-time and immediately discarded. There is no background listening.</div>
                     <div class="lang-bn"><strong>কোনো অডিও সংরক্ষণ করা হয় না:</strong> আপনার কণ্ঠস্বর কোনো ফাইল আকারে সেভ বা সংরক্ষণ করা হয় না। কথা টেক্সটে রূপান্তরিত হওয়ার পরপরই অডিও মুছে যায়। ব্যাকগ্রাউন্ডে কোনো গোপন অডিও শোনা হয় না।</div>
+                    <div class="lang-bl"><strong>Audio Save Hoy Na:</strong> Apnar kotha shonar por real-time text e convert hoye audio shathe shathe delete hoye jay. Kono audio file save hoy na ebong background e kono listening chole na.</div>
                 </div>
             </div>
         </div>
@@ -598,11 +628,13 @@
             <div>
                 <div class="section-title lang-en">In-Keyboard Translation</div>
                 <div class="section-title lang-bn">ইন-কিবোর্ড রিয়েল-টাইম অনুবাদ</div>
+                <div class="section-title lang-bl">In-Keyboard Translation</div>
             </div>
         </div>
         <div class="section-body">
             <p class="lang-en">Banglish Keyboard provides instant translation within the toolbar:</p>
             <p class="lang-bn">বাংলিশ কিবোর্ডের টুলবারে রয়েছে সরাসরি টাইপ করার সময় অনুবাদ করার সুবিধা:</p>
+            <p class="lang-bl">Banglish Keyboard er toolbar e direct type korar shomoy instant translate kora jay:</p>
 
             <ul class="policy-list lang-en">
                 <li><strong>On-Device Offline Translation:</strong> Uses Google ML Kit models downloaded to your device, functioning 100% locally without sending data across the network.</li>
@@ -611,6 +643,10 @@
             <ul class="policy-list lang-bn">
                 <li><strong>অন-ডিভাইস অফলাইন অনুবাদ:</strong> গুগল ML Kit-এর মাধ্যমে ভাষা মডেল ফোনে একবার ডাউনলোড হয়ে গেলে ইন্টারনেট ছাড়াই সম্পূর্ণ লোকালভাবে অনুবাদ সম্পন্ন হয়।</li>
                 <li><strong>অনলাইন অনুবাদ:</strong> ব্যবহারকারী যখন অনুবাদের অনুরোধ করেন, শুধু অনুবাদ করার নির্দিষ্ট বাক্যটি সিকিউর কানেকশনের মাধ্যমে অনুবাদ করা হয়।</li>
+            </ul>
+            <ul class="policy-list lang-bl">
+                <li><strong>Offline Translation (Google ML Kit):</strong> Model ekbar download hole net charai 100% local vabe translate hoy.</li>
+                <li><strong>Online Translation:</strong> Shudhu je sentence ta translate korte chan shetai secure bhabe translate hoy, kono user identity attach thake na.</li>
             </ul>
         </div>
     </div>
@@ -622,6 +658,7 @@
             <div>
                 <div class="section-title lang-en">Clipboard History Protection</div>
                 <div class="section-title lang-bn">ক্লিপবোর্ড হিস্ট্রি ও নিরাপত্তা</div>
+                <div class="section-title lang-bl">Clipboard History &amp; Security</div>
             </div>
         </div>
         <div class="section-body">
@@ -635,6 +672,11 @@
                 <li><strong>লোকাল সংরক্ষণ:</strong> ক্লিপবোর্ডের সমস্ত ডেটা শুধু আপনার ফোনের মেমোরিতে থাকে, কোনো ক্লাউডে পাঠানো হয় না।</li>
                 <li><strong>স্বয়ংক্রিয় প্রুনিং:</strong> আনপিন করা অপ্রয়োজনীয় ক্লিপ নির্দিষ্ট সময় পর নিজে থেকেই মুছে যায় এবং আপনি যেকোনো সময় যেকোনো ক্লিপ ডিলিট করতে পারেন।</li>
             </ul>
+            <ul class="policy-list lang-bl">
+                <li><strong>Sensitive Clip Bypass:</strong> Password field theke copy kora text ba sensitive clip clipboard history te save hoy na.</li>
+                <li><strong>Local Storage:</strong> Copy kora shob data shudhu apnar phone ei thake, kono cloud e jay na.</li>
+                <li><strong>Auto Clean:</strong> Unpinned clip gulo kichudin por automatically delete hoye jay ebong apni jekono shomoy muche felte paren.</li>
+            </ul>
         </div>
     </div>
 
@@ -645,6 +687,7 @@
             <div>
                 <div class="section-title lang-en">Permissions Required</div>
                 <div class="section-title lang-bn">প্রয়োজনীয় পারমিশনসমূহ</div>
+                <div class="section-title lang-bl">Permissions Required</div>
             </div>
         </div>
         <div class="section-body">
@@ -658,6 +701,11 @@
                 <li><strong>RECORD_AUDIO:</strong> মাইক্রোফোনে কথা বলে ভয়েস টাইপিং করার জন্য ব্যবহৃত হয়।</li>
                 <li><strong>INTERNET:</strong> অফলাইন অনুবাদের ভাষা মডেল ডাউনলোড এবং অনলাইন অনুবাদের জন্য প্রয়োজন হয়।</li>
             </ul>
+            <ul class="policy-list lang-bl">
+                <li><strong>BIND_INPUT_METHOD:</strong> Android phone e keyboard hishebe kaj korar main permission.</li>
+                <li><strong>RECORD_AUDIO:</strong> Mic diye voice typing korar jonno use hoy.</li>
+                <li><strong>INTERNET:</strong> Offline translation model download ebong online translate er jonno dorkar.</li>
+            </ul>
         </div>
     </div>
 
@@ -668,11 +716,13 @@
             <div>
                 <div class="section-title lang-en">Data Deletion &amp; User Control</div>
                 <div class="section-title lang-bn">ডেটা নিয়ন্ত্রণ ও মুছে ফেলা</div>
+                <div class="section-title lang-bl">Data Delete &amp; User Control</div>
             </div>
         </div>
         <div class="section-body">
             <p class="lang-en">Because all keyboard data stays locally on your phone, you maintain total control:</p>
             <p class="lang-bn">যেহেতু কিবোর্ডের সমস্ত ডেটা শুধু আপনার নিজস্ব ফোনে থাকে, তাই ডেটার ওপর আপনার সম্পূর্ণ নিয়ন্ত্রণ থাকে:</p>
+            <p class="lang-bl">Shob data apnar phone ei thakay apnar full control thake:</p>
 
             <ul class="policy-list lang-en">
                 <li><strong>Clear App Storage:</strong> Android Settings &rarr; Apps &rarr; Banglish Keyboard &rarr; Clear Storage permanently deletes all learned words, dictionary history, and clips.</li>
@@ -681,6 +731,10 @@
             <ul class="policy-list lang-bn">
                 <li><strong>অ্যাপ স্টোরেজ ক্লিয়ার করা:</strong> অ্যান্ড্রয়েড Settings &rarr; Apps &rarr; Banglish Keyboard &rarr; Clear Storage করলেই সমস্ত সংরক্ষিত শব্দ এবং ক্লিপবোর্ড ডেটা চিরতরে মুছে যাবে।</li>
                 <li><strong>অ্যাপ আনইনস্টল:</strong> অ্যাপটি আনইনস্টল করলে সাথে সাথে ফোনের প্রাইভেট মেমোরি থেকে সম্পূর্ণ ডেটা স্থায়ীভাবে মুছে যায়।</li>
+            </ul>
+            <ul class="policy-list lang-bl">
+                <li><strong>Clear Storage:</strong> Settings &rarr; Apps &rarr; Banglish Keyboard &rarr; Clear Storage korle shob word history o clipboard data delete hoye jabe.</li>
+                <li><strong>Uninstall:</strong> App uninstall korlei phone theke shob data permanently muche jay.</li>
             </ul>
         </div>
     </div>
@@ -692,11 +746,13 @@
             <div>
                 <div class="section-title lang-en">Children's Privacy (COPPA)</div>
                 <div class="section-title lang-bn">শিশুদের গোপনীয়তা (COPPA)</div>
+                <div class="section-title lang-bl">Bachader Privacy (COPPA)</div>
             </div>
         </div>
         <div class="section-body">
             <p class="lang-en">Banglish Keyboard is suitable for users of all ages and does not collect any personal identity data from children under 13, in compliance with COPPA and international standards.</p>
             <p class="lang-bn">বাংলিশ কিবোর্ড যেকোনো বয়সের মানুষের জন্য প্রযোজ্য এবং এটি ১৩ বছরের কম বয়সী শিশুসহ কোনো ব্যক্তির কাছ থেকেই কোনো ব্যক্তিগত তথ্য সংগ্রহ করে না। এটি COPPA মানদণ্ড সম্পূর্ণ মেনে চলে।</p>
+            <p class="lang-bl">Banglish Keyboard je kono boyosher manush er jonno safe ebong 13 bochorer niche bachader theke kono info ney na (COPPA compliant).</p>
         </div>
     </div>
 
@@ -707,13 +763,16 @@
             <div>
                 <div class="section-title lang-en">Contact Us &amp; Support</div>
                 <div class="section-title lang-bn">যোগাযোগ ও সাপোর্ট</div>
+                <div class="section-title lang-bl">Jogajog &amp; Support</div>
                 <div class="section-subtitle lang-en">Questions about this privacy policy?</div>
                 <div class="section-subtitle lang-bn">এই গোপনীয়তা নীতি সম্পর্কে কোনো প্রশ্ন থাকলে যোগাযোগ করুন</div>
+                <div class="section-subtitle lang-bl">Ei policy niye kono question thakle contact korun</div>
             </div>
         </div>
 
         <p class="lang-en" style="color:rgba(255,255,255,.75); font-size:clamp(13px,3vw,14.5px);">Reach out to developer Md Mobassher Ahmed Sowrov or JS Organization:</p>
         <p class="lang-bn" style="color:rgba(255,255,255,.75); font-size:clamp(13px,3vw,14.5px);">যেকোনো প্রশ্ন, পরামর্শ বা সাপোর্টের জন্য আমাদের সাথে যোগাযোগ করতে পারেন:</p>
+        <p class="lang-bl" style="color:rgba(255,255,255,.75); font-size:clamp(13px,3vw,14.5px);">Jekono question ba support er jonno amader shathe jogajog korun:</p>
 
         <div class="contact-grid">
             <a class="contact-item" href="mailto:jsorganization.official@gmail.com">
@@ -750,11 +809,13 @@
             <div>
                 <div class="section-title lang-en">Legal Compliance &amp; Standards</div>
                 <div class="section-title lang-bn">আন্তর্জাতিক আইনি সম্মতি</div>
+                <div class="section-title lang-bl">Legal Compliance &amp; Standards</div>
             </div>
         </div>
         <div class="section-body">
             <p class="lang-en">This Privacy Policy is designed in full compliance with the <strong>Google Play Developer Distribution Agreement</strong>, Google Play Keyboard/IME policies, <strong>GDPR</strong>, and <strong>CCPA</strong>. Banglish Keyboard does not harvest or sell consumer data.</p>
             <p class="lang-bn">এই প্রাইভেসি পলিসিটি <strong>Google Play Developer Policy</strong>, ইউরোপীয় ইউনিয়নের <strong>GDPR</strong>, এবং <strong>CCPA</strong> মানদণ্ড অনুযায়ী তৈরি করা হয়েছে। কিবোর্ড কোনো ব্যবহারকারীর ডেটা সংগ্রহ বা বিক্রি করে না।</p>
+            <p class="lang-bl">Ei policy ti Google Play Store Policy, GDPR ebong CCPA international standards mene toiri kora hoyeche. Kono user data sell ba collect kora hoy na.</p>
         </div>
     </div>
 
@@ -764,6 +825,7 @@
 <div class="footer">
     <p class="lang-en">This Privacy Policy was last updated on <strong>October 2026</strong>.</p>
     <p class="lang-bn">এই গোপনীয়তা নীতি সর্বশেষ <strong>অক্টোবর ২০২৬</strong> তারিখে হালনাগাদ করা হয়েছে।</p>
+    <p class="lang-bl">Ei Privacy Policy shoroboshesh <strong>October 2026</strong> e update kora hoyeche.</p>
 
     <p style="margin-top:6px;">&copy; 2026 <strong>JS Organization</strong> &middot; Developed by <strong>Md Mobassher Ahmed Sowrov</strong>. All rights reserved.</p>
 </div>
@@ -776,8 +838,8 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const urlParams = new URLSearchParams(window.location.search);
-        let lang = urlParams.get('language') || 'bn'; // default to bn as requested
-        if (lang !== 'en' && lang !== 'bn') { lang = 'bn'; }
+        let lang = urlParams.get('language') || 'en'; // default English
+        if (!['en', 'bn', 'bl'].includes(lang)) { lang = 'en'; }
         setLanguage(lang);
 
         window.addEventListener('scroll', function() {
@@ -792,8 +854,9 @@
 
     function setLanguage(lang) {
         document.body.className = 'lang-' + lang;
-        document.getElementById('btnBn').classList.toggle('active', lang === 'bn');
         document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+        document.getElementById('btnBn').classList.toggle('active', lang === 'bn');
+        document.getElementById('btnBl').classList.toggle('active', lang === 'bl');
 
         const url = new URL(window.location);
         url.searchParams.set('language', lang);

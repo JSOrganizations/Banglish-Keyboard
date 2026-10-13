@@ -35,7 +35,8 @@
         }
 
         body:not(.lang-en) .lang-en,
-        body:not(.lang-bn) .lang-bn {
+        body:not(.lang-bn) .lang-bn,
+        body:not(.lang-bl) .lang-bl {
             display: none !important;
         }
 
@@ -135,7 +136,7 @@
             background:#10b981; box-shadow:0 0 8px #10b981; flex-shrink:0;
         }
         
-        /* Language Toggle Button Pill */
+        /* 3-Language Toggle Button Pill */
         .lang-switcher-wrap {
             display: inline-flex;
             background: rgba(2, 117, 68, 0.3);
@@ -144,6 +145,7 @@
             padding: 3px;
             margin: 18px 0;
             position: relative;
+            gap: 3px;
         }
         .lang-btn {
             border: none;
@@ -367,7 +369,7 @@
         }
     </style>
 </head>
-<body class="lang-bn">
+<body class="lang-en">
 
 <!-- Top Navigation -->
 <nav class="site-nav">
@@ -379,10 +381,12 @@
         <a href="privacy-policy.html" class="nav-link">
             <span class="lang-en">Privacy Policy</span>
             <span class="lang-bn">গোপনীয়তা নীতি</span>
+            <span class="lang-bl">Privacy Policy</span>
         </a>
         <a href="terms-of-use.html" class="nav-link active">
             <span class="lang-en">Terms of Use</span>
             <span class="lang-bn">ব্যবহারের শর্তাবলি</span>
+            <span class="lang-bl">Terms of Use</span>
         </a>
     </div>
 </nav>
@@ -396,18 +400,22 @@
     <div>
         <div class="hero-badge lang-en">Banglish Keyboard &middot; User Agreement</div>
         <div class="hero-badge lang-bn">বাংলিশ কিবোর্ড &middot; ব্যবহারের আইনি শর্তাবলি</div>
+        <div class="hero-badge lang-bl">Banglish Keyboard &middot; Byaboharer Aiyni Shorthaboli</div>
     </div>
 
     <h1 class="lang-en">Terms of <span>Use</span></h1>
     <h1 class="lang-bn">ব্যবহারের <span>শর্তাবলি</span></h1>
+    <h1 class="lang-bl">Byaboharer <span>Shorthaboli</span></h1>
 
     <p class="hero-sub lang-en">Banglish Keyboard by JS Organization — Legal rules, license, and guidelines governing the use of this application.</p>
     <p class="hero-sub lang-bn">JS Organization-এর বাংলিশ কিবোর্ড — অ্যাপ্লিকেশনটি ব্যবহারের নিয়মাবলি, লাইসেন্স এবং আইনি শর্তাবলি।</p>
+    <p class="hero-sub lang-bl">JS Organization-er Banglish Keyboard — App ti byabohar korar niyam, license ebong aiyni guidelines.</p>
 
-    <!-- Language Switcher (Bangla & English Only) -->
+    <!-- 3-Way Language Switcher (Default: English) -->
     <div class="lang-switcher-wrap">
-        <button id="btnBn" class="lang-btn active" onclick="setLanguage('bn')">বাংলা</button>
-        <button id="btnEn" class="lang-btn" onclick="setLanguage('en')">English</button>
+        <button id="btnEn" class="lang-btn active" onclick="setLanguage('en')">English</button>
+        <button id="btnBn" class="lang-btn" onclick="setLanguage('bn')">বাংলা</button>
+        <button id="btnBl" class="lang-btn" onclick="setLanguage('bl')">Banglish</button>
     </div>
 
     <div class="hero-meta">
@@ -415,11 +423,13 @@
             <i class="fa-regular fa-calendar-check"></i>
             <span class="lang-en">Effective: October 2026</span>
             <span class="lang-bn">কার্যকরী তারিখ: অক্টোবর ২০২৬</span>
+            <span class="lang-bl">Karjokori Tarikh: October 2026</span>
         </div>
         <div class="hero-meta-item">
             <i class="fa-solid fa-file-contract"></i>
             <span class="lang-en">Binding Agreement</span>
             <span class="lang-bn">বাধ্যতামূলক চুক্তি</span>
+            <span class="lang-bl">Baddhotamulok Chukti</span>
         </div>
     </div>
 </div>
@@ -430,34 +440,35 @@
     <div class="toc-card">
         <h2 class="lang-en">Table of Contents</h2>
         <h2 class="lang-bn">সূচিপত্র</h2>
+        <h2 class="lang-bl">Suchipotro</h2>
 
         <div class="toc-grid">
             <a href="#t1" class="toc-link"><span class="toc-num">01</span>
-                <span class="lang-en">Acceptance of Terms</span><span class="lang-bn">শর্ত গ্রহণ ও সম্মতি</span>
+                <span class="lang-en">Acceptance of Terms</span><span class="lang-bn">শর্ত গ্রহণ ও সম্মতি</span><span class="lang-bl">Shortho Grohon o Shommoti</span>
             </a>
             <a href="#t2" class="toc-link"><span class="toc-num">02</span>
-                <span class="lang-en">License &amp; Usage Rights</span><span class="lang-bn">লাইসেন্স ও ব্যবহারের পরিধি</span>
+                <span class="lang-en">License &amp; Usage Rights</span><span class="lang-bn">লাইসেন্স ও ব্যবহারের পরিধি</span><span class="lang-bl">License o Byaboharer Poridhi</span>
             </a>
             <a href="#t3" class="toc-link"><span class="toc-num">03</span>
-                <span class="lang-en">User Responsibilities</span><span class="lang-bn">ব্যবহারকারীর দায়িত্ব ও আচরণ</span>
+                <span class="lang-en">User Responsibilities</span><span class="lang-bn">ব্যবহারকারীর দায়িত্ব ও আচরণ</span><span class="lang-bl">User er Dayitto o Achoron</span>
             </a>
             <a href="#t4" class="toc-link"><span class="toc-num">04</span>
-                <span class="lang-en">Privacy &amp; Security</span><span class="lang-bn">গোপনীয়তা ও নিরাপত্তা নীতি</span>
+                <span class="lang-en">Privacy &amp; Security</span><span class="lang-bn">গোপনীয়তা ও নিরাপত্তা নীতি</span><span class="lang-bl">Goponiyota o Security Niti</span>
             </a>
             <a href="#t5" class="toc-link"><span class="toc-num">05</span>
-                <span class="lang-en">Intellectual Property</span><span class="lang-bn">মেধা সম্পত্তি ও স্বত্বাধিকার</span>
+                <span class="lang-en">Intellectual Property</span><span class="lang-bn">মেধা সম্পত্তি ও স্বত্বাধিকার</span><span class="lang-bl">Medha Shompotti o Copyright</span>
             </a>
             <a href="#t6" class="toc-link"><span class="toc-num">06</span>
-                <span class="lang-en">Disclaimer of Warranties</span><span class="lang-bn">ওয়ারেন্টি থেকে দায়মুক্তি</span>
+                <span class="lang-en">Disclaimer of Warranties</span><span class="lang-bn">ওয়ারেন্টি থেকে দায়মুক্তি</span><span class="lang-bl">Warranty theke Daymukti</span>
             </a>
             <a href="#t7" class="toc-link"><span class="toc-num">07</span>
-                <span class="lang-en">Limitation of Liability</span><span class="lang-bn">দায়বদ্ধতার সীমাবদ্ধতা</span>
+                <span class="lang-en">Limitation of Liability</span><span class="lang-bn">দায়বদ্ধতার সীমাবদ্ধতা</span><span class="lang-bl">Dayboddhotar Shimaboddhota</span>
             </a>
             <a href="#t8" class="toc-link"><span class="toc-num">08</span>
-                <span class="lang-en">Updates &amp; Termination</span><span class="lang-bn">পরিবর্তন ও সমাপ্তি</span>
+                <span class="lang-en">Updates &amp; Termination</span><span class="lang-bn">পরিবর্তন ও সমাপ্তি</span><span class="lang-bl">Shortho Poriborton o Shomapti</span>
             </a>
             <a href="#t9" class="toc-link"><span class="toc-num">09</span>
-                <span class="lang-en">Contact &amp; Support</span><span class="lang-bn">অফিসিয়াল যোগাযোগ</span>
+                <span class="lang-en">Contact &amp; Support</span><span class="lang-bn">অফিসিয়াল যোগাযোগ</span><span class="lang-bl">Official Jogajog o Support</span>
             </a>
         </div>
     </div>
@@ -469,11 +480,13 @@
             <div>
                 <div class="section-title lang-en">Acceptance of Terms</div>
                 <div class="section-title lang-bn">শর্ত গ্রহণ ও সম্মতি</div>
+                <div class="section-title lang-bl">Shortho Grohon o Shommoti</div>
             </div>
         </div>
         <div class="section-body">
             <p class="lang-en">By downloading, installing, enabling, or using <strong>Banglish Keyboard</strong> (the "App"), you agree to be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, please do not use the Application.</p>
             <p class="lang-bn"><strong>Banglish Keyboard</strong> ("অ্যাপ") ডাউনলোড, ইনস্টল, সক্রিয় বা ব্যবহার করার মাধ্যমে আপনি এই ব্যবহারের শর্তাবলি ("শর্তাবলি") মেনে নিতে সম্মতি দিচ্ছেন। আপনি যদি এই শর্তাবলিতে সম্মত না হন, তবে অনুগ্রহ করে অ্যাপটি ব্যবহার করবেন না।</p>
+            <p class="lang-bl"><strong>Banglish Keyboard</strong> ("App") download, install, enable ba byabohar korar maddhome apni ei Terms of Use ("Terms") mene nite shommoti jannachhen. Apni jodi ei sharthaboli te shommot na hon, tahole onugroho kore app ti byabohar korben na.</p>
         </div>
     </div>
 
@@ -484,13 +497,17 @@
             <div>
                 <div class="section-title lang-en">License &amp; Usage Rights</div>
                 <div class="section-title lang-bn">লাইসেন্স ও ব্যবহারের পরিধি</div>
+                <div class="section-title lang-bl">License o Byaboharer Poridhi</div>
             </div>
         </div>
         <div class="section-body">
             <p class="lang-en">We grant you a personal, non-exclusive, non-transferable, revocable license to use Banglish Keyboard on your personal Android devices strictly for personal and non-commercial communication purposes.</p>
             <p class="lang-bn">আপনার ব্যক্তিগত ডিভাইসে ব্যক্তিগত ও অবাণিজ্যিক উদ্দেশ্যে Banglish Keyboard ব্যবহারের জন্য আপনাকে একটি অ-হস্তান্তরযোগ্য, সীমিত এবং প্রত্যাহারযোগ্য লাইসেন্স প্রদান করা হচ্ছে।</p>
+            <p class="lang-bl">Apnar personal Android device e byaktigoto o non-commercial messaging er jonno Banglish Keyboard byabohar korte apnake ekta personal, non-transferable, revocable license deya hoyeche.</p>
 
-            <h3>Restrictions</h3>
+            <h3 class="lang-en">Restrictions</h3>
+            <h3 class="lang-bn">ব্যবহারের বিধিনিষেধ</h3>
+            <h3 class="lang-bl">Niyom-kanun ba Restrictions</h3>
             <ul class="policy-list lang-en">
                 <li>You may not decompile, reverse-engineer, modify, or derive source code from the Application.</li>
                 <li>You may not resell, rent, sublicense, or distribute copies of the Application without prior written authorization.</li>
@@ -500,6 +517,11 @@
                 <li>আপনি অ্যাপটি ডিকম্পাইল, রিভার্স-ইঞ্জিনিয়ার বা এর কোড পরিবর্তন করার চেষ্টা করতে পারবেন না।</li>
                 <li>পূর্বানুমতি ছাড়া অ্যাপটি পুনর্নির্মাণ, বিক্রি, সাব-লাইসেন্স বা অন্য কোথাও বিতরণ করা যাবে না।</li>
                 <li>অ্যাপটি কোনো প্রকার বেআইনি বা ক্ষতিকর কাজে ব্যবহার করা সম্পূর্ণ নিষিদ্ধ।</li>
+            </ul>
+            <ul class="policy-list lang-bl">
+                <li>Apni app ti decompile, reverse-engineer ba er source code ber korar cheshta korte parben na.</li>
+                <li>Aamader written permission chara app ti bikri, rent, sublicense ba kothao distribute kora jabe na.</li>
+                <li>App ti kono dhoroner illegal ba khotikor kaje byabohar kora shompurno nishiddho.</li>
             </ul>
         </div>
     </div>
@@ -511,11 +533,13 @@
             <div>
                 <div class="section-title lang-en">User Conduct &amp; Responsibilities</div>
                 <div class="section-title lang-bn">ব্যবহারকারীর দায়িত্ব ও আচরণ</div>
+                <div class="section-title lang-bl">User er Dayitto o Achoron</div>
             </div>
         </div>
         <div class="section-body">
             <p class="lang-en">You retain full responsibility for the words, texts, credentials, or content you input, send, or publish using Banglish Keyboard. You agree to use the keyboard in accordance with applicable laws and respect the privacy and security of your own device.</p>
             <p class="lang-bn">বাংলিশ কিবোর্ড ব্যবহার করে আপনি যেসব লেখা, মেসেজ বা তথ্য আদান-প্রদান করবেন, তার সম্পূর্ণ দায়দায়িত্ব একান্তই আপনার। দেশের প্রচলিত আইন মেনে চলা এবং নিজের ডিভাইসের নিরাপত্তা বজায় রাখা আপনার দায়িত্ব।</p>
+            <p class="lang-bl">Banglish Keyboard byabohar kore apni je shob lekha, message ba content pathaben ba share korben, tar shompurno day-dayitto ekanto-i apnar. Desher aain mene chola ebong nijer device er security bojay rakha apnar dayitto.</p>
         </div>
     </div>
 
@@ -526,11 +550,13 @@
             <div>
                 <div class="section-title lang-en">Privacy &amp; Security Commitment</div>
                 <div class="section-title lang-bn">গোপনীয়তা ও নিরাপত্তা নীতি</div>
+                <div class="section-title lang-bl">Goponiyota o Security Niti</div>
             </div>
         </div>
         <div class="section-body">
             <p class="lang-en">Our handling of user data is governed by our <a href="privacy-policy.html" style="color:var(--accent); font-weight:600; text-decoration:underline;">Privacy Policy</a>. Banglish Keyboard maintains a strict zero-keylogging policy. All word suggestions, custom vocabulary, and clipboard histories remain securely within your local device memory.</p>
             <p class="lang-bn">আপনার তথ্যের নিরাপত্তা আমাদের <a href="privacy-policy.html" style="color:var(--accent); font-weight:600; text-decoration:underline;">গোপনীয়তা নীতি</a> অনুযায়ী পরিচালিত। কিবোর্ডে কোনো কি-লগিং নেই; আপনার শব্দ সাজেশন ও ক্লিপবোর্ড ডেটা শুধুমাত্র আপনার নিজস্ব ফোনে সুরক্ষিত থাকে।</p>
+            <p class="lang-bl">Apnar tothyer shurokkha aamader <a href="privacy-policy.html" style="color:var(--accent); font-weight:600; text-decoration:underline;">Privacy Policy</a> onujayi porichalito hoy. Banglish Keyboard e kono keylogging nei; apnar shob word suggestion ebong clipboard data shudhumatro apnar phone er local storage ei shurokkhito thake.</p>
         </div>
     </div>
 
@@ -541,11 +567,13 @@
             <div>
                 <div class="section-title lang-en">Intellectual Property Rights</div>
                 <div class="section-title lang-bn">মেধা সম্পত্তি ও স্বত্বাধিকার</div>
+                <div class="section-title lang-bl">Medha Shompotti o Copyright</div>
             </div>
         </div>
         <div class="section-body">
             <p class="lang-en">All trademarks, logos, phonetic rule mappings, code, design, and software components of Banglish Keyboard belong exclusively to <strong>Md Mobassher Ahmed Sowrov</strong> and <strong>JS Organization</strong>. All rights not expressly granted are reserved.</p>
             <p class="lang-bn">বাংলিশ কিবোর্ডের নাম, লোগো, কোড, ফোনেটিক নিয়মাবলি এবং ডিজাইন <strong>Md Mobassher Ahmed Sowrov</strong> এবং <strong>JS Organization</strong>-এর একান্ত মেধা সম্পত্তি। সমস্ত অধিকার সংরক্ষিত।</p>
+            <p class="lang-bl">Banglish Keyboard er name, logo, phonetic rule mappings, code, design ebong shob software component <strong>Md Mobassher Ahmed Sowrov</strong> ebong <strong>JS Organization</strong> er ekanto medha shompotti. Shob copyright shurokkhito.</p>
         </div>
     </div>
 
@@ -556,6 +584,7 @@
             <div>
                 <div class="section-title lang-en">Disclaimer of Warranties</div>
                 <div class="section-title lang-bn">ওয়ারেন্টি থেকে দায়মুক্তি</div>
+                <div class="section-title lang-bl">Warranty theke Daymukti</div>
             </div>
         </div>
         <div class="section-body">
@@ -564,6 +593,7 @@
                 <div>
                     <div class="lang-en"><strong>Provided "AS IS":</strong> Banglish Keyboard is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind. While we strive for seamless performance, we do not warrant that typing predictions, voice transcriptions, or machine translations will be error-free at all times.</div>
                     <div class="lang-bn"><strong>"AS IS" ভিত্তিতে সেবা:</strong> অ্যাপটি কোনো প্রকার প্রত্যক্ষ বা পরোক্ষ ওয়ারেন্টি ছাড়াই বর্তমান অবস্থায় ("AS IS") ব্যবহারকারীদের জন্য উন্মুক্ত করা হয়েছে। শব্দ সাজেশন, ভয়েস রেকগনিশন বা মেশিন অনুবাদ শতভাগ নিখুঁত হওয়ার কোনো পরম নিশ্চয়তা দেওয়া হয় না।</div>
+                    <div class="lang-bl"><strong>"AS IS" Bhittite Sheba:</strong> Banglish Keyboard kono prokar warranty charai bortoman obosthay ("AS IS") ebong "AS AVAILABLE" bhittite deya hoyeche. Typing suggestion, voice recognition ba machine translation shob shomoy 100% bhulhin hobe tar kono absolute nishchoyota deya hoy na.</div>
                 </div>
             </div>
         </div>
@@ -576,11 +606,13 @@
             <div>
                 <div class="section-title lang-en">Limitation of Liability</div>
                 <div class="section-title lang-bn">দায়বদ্ধতার আইনি সীমাবদ্ধতা</div>
+                <div class="section-title lang-bl">Dayboddhotar Shimaboddhota</div>
             </div>
         </div>
         <div class="section-body">
             <p class="lang-en">To the maximum extent permitted by law, JS Organization and its developers shall not be liable for any indirect, incidental, or consequential damages resulting from your use of or inability to use the keyboard, including typographical errors or device incompatibility.</p>
             <p class="lang-bn">আইন অনুযায়ী সর্বোচ্চ গ্রহণযোগ্য মাত্রা পর্যন্ত, কিবোর্ডটি ব্যবহারের ফলে কোনো টাইপো, তথ্যের অনিচ্ছাকৃত ত্রুটি বা পরোক্ষ ক্ষতির জন্য JS Organization বা এর ডেভেলপার কোনোভাবেই দায়ী থাকবে না।</p>
+            <p class="lang-bl">Aain onujayi shorboccho matra porjonto, keyboard ti byaboharer fole kono typo, bhul tothyo ba porokkho khotir jonno JS Organization ba er developer kono bhabei dayi thakbe na.</p>
         </div>
     </div>
 
@@ -591,11 +623,13 @@
             <div>
                 <div class="section-title lang-en">Updates &amp; Termination</div>
                 <div class="section-title lang-bn">শর্ত পরিবর্তন ও সমাপ্তি</div>
+                <div class="section-title lang-bl">Shortho Poriborton o Shomapti</div>
             </div>
         </div>
         <div class="section-body">
             <p class="lang-en">We reserve the right to update or modify these Terms of Use at any time. Any changes will take effect upon updating this page. Continued use of the Application indicates your acceptance of updated Terms.</p>
             <p class="lang-bn">যেকোনো সময় এই ব্যবহারের শর্তাবলিতে সংশোধনী বা পরিমার্জন আনার অধিকার সংরক্ষিত। নতুন শর্তাবলী প্রকাশের পর অ্যাপের ব্যবহার অব্যাহত রাখলে আপনি পরিবর্তিত শর্ত মেনে নিয়েছেন বলে গণ্য হবে।</p>
+            <p class="lang-bl">Je kono shomoy ei Terms of Use update ba change korar odhikar aamader ache. Notun terms ei page e publish korar por thekei ta karjokori hobe. Poribortito sharthaboli prokash er por-o app byabohar chalile dhora hobe apni ta mene niyechhen.</p>
         </div>
     </div>
 
@@ -606,13 +640,16 @@
             <div>
                 <div class="section-title lang-en">Contact &amp; Official Support</div>
                 <div class="section-title lang-bn">অফিসিয়াল যোগাযোগ ও সাপোর্ট</div>
+                <div class="section-title lang-bl">Official Jogajog o Support</div>
                 <div class="section-subtitle lang-en">Have questions regarding these Terms of Use?</div>
                 <div class="section-subtitle lang-bn">ব্যবহারের শর্তাবলি সম্পর্কে কোনো প্রশ্ন বা মতামত থাকলে যোগাযোগ করুন</div>
+                <div class="section-subtitle lang-bl">Byaboharer sharthaboli niye kono proshno ba motamot thakle jogajog korun</div>
             </div>
         </div>
 
         <p class="lang-en" style="color:rgba(255,255,255,.75); font-size:clamp(13px,3vw,14.5px);">Contact developer Md Mobassher Ahmed Sowrov or JS Organization:</p>
         <p class="lang-bn" style="color:rgba(255,255,255,.75); font-size:clamp(13px,3vw,14.5px);">যেকোনো প্রশ্ন, জিজ্ঞাসা বা মতামতের জন্য আমাদের সাথে যোগাযোগ করতে পারেন:</p>
+        <p class="lang-bl" style="color:rgba(255,255,255,.75); font-size:clamp(13px,3vw,14.5px);">Je kono proshno, jiggasha ba motamoter jonno aamader shathe jogajog korte paren:</p>
 
         <div class="contact-grid">
             <a class="contact-item" href="mailto:jsorganization.official@gmail.com">
@@ -648,6 +685,7 @@
 <div class="footer">
     <p class="lang-en">These Terms of Use were last updated on <strong>October 2026</strong>.</p>
     <p class="lang-bn">এই ব্যবহারের শর্তাবলি সর্বশেষ <strong>অক্টোবর ২০২৬</strong> তারিখে হালনাগাদ করা হয়েছে।</p>
+    <p class="lang-bl">Ei Terms of Use shoroboshesh <strong>October 2026</strong> e update kora hoyeche.</p>
 
     <p style="margin-top:6px;">&copy; 2026 <strong>JS Organization</strong> &middot; Developed by <strong>Md Mobassher Ahmed Sowrov</strong>. All rights reserved.</p>
 </div>
@@ -660,8 +698,8 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const urlParams = new URLSearchParams(window.location.search);
-        let lang = urlParams.get('language') || 'bn'; // default to bn as requested
-        if (lang !== 'en' && lang !== 'bn') { lang = 'bn'; }
+        let lang = urlParams.get('language') || 'en'; // default English
+        if (!['en', 'bn', 'bl'].includes(lang)) { lang = 'en'; }
         setLanguage(lang);
 
         window.addEventListener('scroll', function() {
@@ -676,8 +714,9 @@
 
     function setLanguage(lang) {
         document.body.className = 'lang-' + lang;
-        document.getElementById('btnBn').classList.toggle('active', lang === 'bn');
         document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+        document.getElementById('btnBn').classList.toggle('active', lang === 'bn');
+        document.getElementById('btnBl').classList.toggle('active', lang === 'bl');
 
         const url = new URL(window.location);
         url.searchParams.set('language', lang);
